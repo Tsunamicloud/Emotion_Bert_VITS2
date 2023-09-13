@@ -296,10 +296,6 @@
 ./dataset/hutao/vo_HTLQ001_14_hutao_13.wav|hutao|ZH|所以随便讲了几句就算了，没有继续纠缠。
 ./dataset/hutao/vo_HTLQ001_14_hutao_14.wav|hutao|ZH|嗯？我要这种能力干什么，我又不是医生。
 ./dataset/hutao/vo_HTLQ001_14_hutao_15.wav|hutao|ZH|欸欸——？！难道你在指望往生堂堂主去治病救人吗？
-./dataset/hutao/vo_HTLQ001_14_hutao_16.wav|hutao|ZH|唔，总之先回往生堂再说吧。狼哥的事，和老孟有很深的关系。
-./dataset/hutao/vo_HTLQ001_3_hutao_01.wav|hutao|ZH|哦？
-./dataset/hutao/vo_HTLQ001_3_hutao_02a.wav|hutao|ZH|#哦~别大惊小怪，{PLAYERAVATAR#SEXPRO[INFO_MALE_PRONOUN_HE|INFO_FEMALE_PRONOUN_SHE]}们不是鬼，只是普通的客人。
-./dataset/hutao/vo_HTLQ001_3_hutao_02b.wav|hutao|ZH|#哦~别大惊小怪，{PLAYERAVATAR#SEXPRO[INFO_MALE_PRONOUN_HE|INFO_FEMALE_PRONOUN_SHE]}们不是鬼，只是普通的客人。
 ./dataset/hutao/vo_HTLQ001_3_hutao_03.wav|hutao|ZH|不好意思，他是我们这里新来的仪倌，名叫老孟，第一次来这边做葬仪，难免会有点疑神疑鬼。
 ./dataset/hutao/vo_HTLQ001_3_hutao_04.wav|hutao|ZH|唔？没想到你们还认识钟离呀，那我解释起来也省事多了。
 ./dataset/hutao/vo_HTLQ001_3_hutao_05.wav|hutao|ZH|我是胡桃，往生堂的当代堂主，具体掌管的…嗯，就是些生离死别的小事。

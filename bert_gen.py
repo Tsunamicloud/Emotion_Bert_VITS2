@@ -49,6 +49,6 @@ if __name__ == '__main__':
         lines.extend(f.readlines())
 
     # A100：12
-    with Pool(processes=4) as pool: #A100 40GB suitable config,if coom,please decrease the processess number.
+    with Pool(processes=2) as pool: #A100 40GB suitable config,if coom,please decrease the processess number.
         for _ in tqdm(pool.imap_unordered(process_line, lines)):
             pass
