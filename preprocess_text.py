@@ -7,7 +7,8 @@ from collections import defaultdict
 stage = [1,2,3]
 
 # transcription_path = 'filelists/genshin.list'
-transcription_path = 'filelists/biaobei_output.txt'
+# transcription_path = 'filelists/biaobei_output.txt'
+transcription_path = 'filelists/genshin_hutao_out.txt'
 train_path = 'filelists/train.list'
 val_path = 'filelists/val.list'
 config_path = "configs/config.json"
