@@ -12,8 +12,11 @@ device = torch.device(
         )
     )
 
-tokenizer = AutoTokenizer.from_pretrained("./bert/chinese-roberta-wwm-ext-large")
-model = AutoModelForMaskedLM.from_pretrained("./bert/chinese-roberta-wwm-ext-large").to(device)
+# BERT路径
+#tokenizer = AutoTokenizer.from_pretrained("./bert/chinese-roberta-wwm-ext-large")
+#model = AutoModelForMaskedLM.from_pretrained("./bert/chinese-roberta-wwm-ext-large").to(device)
+tokenizer = AutoTokenizer.from_pretrained("E:\\ESS\\Emotion_Bert_VITS2\\bert\\chinese-roberta-wwm-ext-large")
+model = AutoModelForMaskedLM.from_pretrained("E:\\ESS\\Emotion_Bert_VITS2\\bert\\chinese-roberta-wwm-ext-large").to(device)
 
 def get_bert_feature(text, word2ph):
     with torch.no_grad():

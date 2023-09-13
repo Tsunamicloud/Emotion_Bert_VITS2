@@ -11,6 +11,7 @@ from tqdm import tqdm
 
 def process(item):
     spkdir, wav_name, args = item
+    # # 将spkdir中的反斜杠替换为正斜杠，并通过分割获取最后一个元素作为speaker
     speaker = spkdir.replace("\\", "/").split("/")[-1]
     wav_path = os.path.join(args.in_dir, speaker, wav_name)
     if os.path.exists(wav_path) and '.wav' in wav_path:
@@ -26,6 +27,7 @@ def process(item):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
+    # 重采样的采样率，wav文件从./raw目录读取，重采样后的文件保存到./dataset目录
     parser.add_argument("--sr", type=int, default=44100, help="sampling rate")
     parser.add_argument("--in_dir", type=str, default="./raw", help="path to source dir")
     parser.add_argument("--out_dir", type=str, default="./dataset", help="path to target dir")

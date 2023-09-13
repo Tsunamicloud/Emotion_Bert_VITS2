@@ -51,7 +51,9 @@ def main():
     """Assume Single Node Multi GPUs Training Only"""
     assert torch.cuda.is_available(), "CPU training is not allowed."
 
-    n_gpus = torch.cuda.device_count()
+    # n_gpus = torch.cuda.device_count()
+    # 设备有两张显卡，指定一张，否则多卡训练可能会出问题；只有一张显卡则不用改
+    n_gpus = 1
     os.environ['MASTER_ADDR'] = 'localhost'
     os.environ['MASTER_PORT'] = '65280'
 
@@ -68,6 +70,8 @@ def run(rank, n_gpus, hps):
         writer = SummaryWriter(log_dir=hps.model_dir)
         writer_eval = SummaryWriter(log_dir=os.path.join(hps.model_dir, "eval"))
 
+    # dist.init_process_group(backend='nccl', init_method='env://', world_size=n_gpus, rank=rank)
+    # nccl适用linux后端，gloo适用windows后端
     dist.init_process_group(backend='nccl', init_method='env://', world_size=n_gpus, rank=rank)
     torch.manual_seed(hps.train.seed)
     torch.cuda.set_device(rank)

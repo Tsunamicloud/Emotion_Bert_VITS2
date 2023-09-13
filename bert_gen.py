@@ -48,6 +48,7 @@ if __name__ == '__main__':
     with open(hps.data.validation_files, encoding='utf-8' ) as f:
         lines.extend(f.readlines())
 
-    with Pool(processes=12) as pool: #A100 40GB suitable config,if coom,please decrease the processess number.
+    # A100：12
+    with Pool(processes=2) as pool: #A100 40GB suitable config,if coom,please decrease the processess number.
         for _ in tqdm(pool.imap_unordered(process_line, lines)):
             pass

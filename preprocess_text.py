@@ -6,7 +6,8 @@ from text.cleaner import clean_text
 from collections import defaultdict
 stage = [1,2,3]
 
-transcription_path = 'filelists/genshin.list'
+# transcription_path = 'filelists/genshin.list'
+transcription_path = 'filelists/biaobei_output.txt'
 train_path = 'filelists/train.list'
 val_path = 'filelists/val.list'
 config_path = "configs/config.json"
