@@ -1,9 +1,9 @@
 import os
 
-name = 'falushan'
+name = 'hutao'
 
-path = f'./raw/{name}'
-out_file = f"filelists/genshin_{name}_out.txt"
+path = f'../raw/{name}'
+out_file = f"../filelists/genshin_{name}_out.txt"
 
 
 def process():

@@ -35,7 +35,7 @@
     "n_speakers": 256,
     "cleaned_text": true,
     "spk2id": {
-      "biaobei": 0
+      "hutao": 0
     }
   },
   "model": {
