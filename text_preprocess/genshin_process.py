@@ -1,6 +1,6 @@
 import os
 
-name = 'hutao'
+name = 'zhongli'
 
 path = f'../raw/{name}'
 out_file = f"../filelists/genshin_{name}_out.txt"

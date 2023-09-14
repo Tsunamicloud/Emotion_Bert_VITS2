@@ -75,7 +75,7 @@ def tts_fn(text, speaker, sdp_ratio, noise_scale, noise_scale_w, length_scale):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("-m", "--model", default="./logs/as/G_8000.pth", help="path of your model")
+    parser.add_argument("-m", "--model", default="./logs/hutao_pretrained/G_32000.pth", help="path of your model")
     parser.add_argument("-c", "--config", default="./configs/config.json", help="path of your config file")
     parser.add_argument("--share", default=False, help="make link public")
     parser.add_argument("-d", "--debug", action="store_true", help="enable DEBUG-LEVEL log")
@@ -110,8 +110,9 @@ if __name__ == "__main__":
     with gr.Blocks() as app:
         with gr.Row():
             with gr.Column():
+                # 吃葡萄不吐葡萄皮，不吃葡萄倒吐葡萄皮。
                 text = gr.TextArea(label="Text", placeholder="Input Text Here",
-                                      value="吃葡萄不吐葡萄皮，不吃葡萄倒吐葡萄皮。")
+                                      value="抛开没脱鞋不谈，难道就没有一点身体长高的原因吗？")
                 speaker = gr.Dropdown(choices=speakers, value=speakers[0], label='Speaker')
                 sdp_ratio = gr.Slider(minimum=0, maximum=1, value=0.2, step=0.1, label='SDP Ratio')
                 noise_scale = gr.Slider(minimum=0.1, maximum=2, value=0.6, step=0.1, label='Noise Scale')
