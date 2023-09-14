@@ -1,4 +1,4 @@
-# Emotion-BERT-VITS2  
+# Emotion-BERT-VITS2 (Ongoing!)
 
 VITS2 backbone with BERT, integrated with emotion extraction
 

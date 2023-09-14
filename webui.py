@@ -75,7 +75,7 @@ def tts_fn(text, speaker, sdp_ratio, noise_scale, noise_scale_w, length_scale):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("-m", "--model", default="./logs/hutao_pretrained/G_32000.pth", help="path of your model")
+    parser.add_argument("-m", "--model", default="./logs/hutao_pretrained/G_36000.pth", help="path of your model")
     parser.add_argument("-c", "--config", default="./configs/config.json", help="path of your config file")
     parser.add_argument("--share", default=False, help="make link public")
     parser.add_argument("-d", "--debug", action="store_true", help="enable DEBUG-LEVEL log")
