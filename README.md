@@ -7,3 +7,4 @@ original repo: https://github.com/Stardust-minus/Bert-VITS2.git
 - [x] Run pass the original code framework
 - [ ] Emotion_extract 
 - [ ] Emotion_clustering
+- [ ] Emotion_recognition for input prompt
