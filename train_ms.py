@@ -76,6 +76,7 @@ def run(rank, n_gpus, hps):
     torch.manual_seed(hps.train.seed)
     torch.cuda.set_device(rank)
 
+    # 加载训练数据集
     train_dataset = TextAudioSpeakerLoader(hps.data.training_files, hps.data)
     train_sampler = DistributedBucketSampler(
         train_dataset,
@@ -85,6 +86,7 @@ def run(rank, n_gpus, hps):
         rank=rank,
         shuffle=True)
     collate_fn = TextAudioSpeakerCollate()
+    # 加载wav音频
     train_loader = DataLoader(train_dataset, num_workers=24, shuffle=False, pin_memory=True,
                               collate_fn=collate_fn, batch_sampler=train_sampler,
                               persistent_workers=True,prefetch_factor=4)  #256G Memory suitable loader.
@@ -319,16 +321,16 @@ def train_and_evaluate(rank, epoch, hps, nets, optims, schedulers, scaler, loade
                     global_step=global_step,
                     images=image_dict,
                     scalars=scalar_dict)
-            # for remote training
-            data_drive_model_dir = "/root/autodl-tmp/hutao"
+            # Save models in data_drive_model_dir for remote training
+            # data_drive_model_dir = "/root/autodl-tmp/hutao"
 
             if global_step % hps.train.eval_interval == 0:
                 evaluate(hps, net_g, eval_loader, writer_eval)
                 # hps.model_dir
                 utils.save_checkpoint(net_g, optim_g, hps.train.learning_rate, epoch,
-                                      os.path.join(data_drive_model_dir, "G_{}.pth".format(global_step)))
+                                      os.path.join(hps.model_dir, "G_{}.pth".format(global_step)))
                 utils.save_checkpoint(net_d, optim_d, hps.train.learning_rate, epoch,
-                                      os.path.join(data_drive_model_dir, "D_{}.pth".format(global_step)))
+                                      os.path.join(hps.model_dir, "D_{}.pth".format(global_step)))
                 if net_dur_disc is not None:
                     utils.save_checkpoint(net_dur_disc, optim_dur_disc, hps.train.learning_rate, epoch, os.path.join(hps.model_dir, "DUR_{}.pth".format(global_step)))    
                 keep_ckpts = getattr(hps.train, 'keep_ckpts', 5)
